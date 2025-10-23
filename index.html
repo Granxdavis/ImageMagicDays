@@ -10,21 +10,46 @@
     <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
 </head>
- <style>
+<style>
     
     *{
         margin: 0;
         padding: 0;overflow: hidden;
     }
     img{
-        width: 100%;
+        width: 90%;
         height: auto;
         max-width: 100%; /* evita que la imagen se estire más allá de su tamaño natural */
         object-fit: cover;
         display: block;  /* elimina el espacio extra que dejan las imágenes inline */
     }
- </style>
+     .download-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #c05900;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.2s ease;
+    }
+</style>
 <body>
-    <img src="Test.png" alt="">
+    <img id="imagen" src="Test.png" alt="Imagen responsiva" class="responsive-img">
+    <button id = "Descargar" class="download-btn">Descargar imagen</button>
+     <script>
+      document.getElementById("Descargar").addEventListener("click", () => {
+      // Crear un enlace temporal
+      const link = document.createElement("a");
+      link.href = document.getElementById("imagen").src; // Obtiene la URL de la imagen
+      link.download = "Test.jpg"; // Nombre del archivo descargado
+      document.body.appendChild(link); // Añade temporalmente el enlace al documento
+      link.click(); // Simula el clic automático
+      document.body.removeChild(link); // Elimina el enlace después de usarlo
+    });
+  </script>
+    
 </body>
 </html>
