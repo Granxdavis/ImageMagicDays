@@ -37,14 +37,14 @@
     }
 </style>
 <body>
-    <img id="imagen" src="Test.png" alt="Imagen responsiva" class="responsive-img">
+    <img id="imagen" src="Magic_Days.png.png" alt="Imagen responsiva" class="responsive-img">
     <button id = "Descargar" class="download-btn">Descargar imagen</button>
      <script>
       document.getElementById("Descargar").addEventListener("click", () => {
       // Crear un enlace temporal
       const link = document.createElement("a");
       link.href = document.getElementById("imagen").src; // Obtiene la URL de la imagen
-      link.download = "Test.jpg"; // Nombre del archivo descargado
+      link.download = "Magic_Days.png.jpg"; // Nombre del archivo descargado
       document.body.appendChild(link); // Añade temporalmente el enlace al documento
       link.click(); // Simula el clic automático
       document.body.removeChild(link); // Elimina el enlace después de usarlo
